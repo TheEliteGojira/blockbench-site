@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="KAYGEE.MDL">
+  <rect width="32" height="32" rx="6" fill="#0a1622"/>
+  <g stroke="#33a9f2" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- top face -->
+    <path d="M16 5 L26 10.5 L16 16 L6 10.5 Z" fill="#6ec9ff" fill-opacity="0.38"/>
+    <!-- left face -->
+    <path d="M6 10.5 L16 16 L16 27 L6 21.5 Z" fill="#33a9f2" fill-opacity="0.14"/>
+    <!-- right face -->
+    <path d="M26 10.5 L16 16 L16 27 L26 21.5 Z" fill="#33a9f2" fill-opacity="0.26"/>
+  </g>
+</svg>
