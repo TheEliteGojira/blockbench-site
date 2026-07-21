@@ -1,0 +1,30 @@
+# OS / filesystem cruft
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (not used for build, but ignore if ever added)
+node_modules/
+
+# Environment / secrets (form endpoint keys, webhooks, etc.)
+.env
+.env.*
+
+# Local scratch
+tmp/
+*.tmp

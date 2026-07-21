@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NAME · Blockbench Commissions</title>
+<meta name="description" content="Custom Minecraft models and mods built in Blockbench — server-ready for ItemsAdder, Oraxen and ModelEngine." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+
+<!-- Browser 3D engine for exported .glb models -->
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">NAME<b>.</b>MDL</div>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#commissions">Commissions</a>
+      <a href="#contact">Contact</a>
+      <span class="status status-link"><span class="dot"></span> Comms Open</span>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="wrap hero">
+  <div>
+    <div class="eyebrow">Blockbench Modeler · Minecraft Assets</div>
+    <h1>Custom models,<br><span>server-ready.</span></h1>
+    <p>Original Minecraft models and mods built in Blockbench — mobs, bosses, weapons, vehicles — delivered drop-in ready for ItemsAdder, Oraxen, Nexo and ModelEngine.</p>
+    <div class="cta-row">
+      <a class="btn" href="#contact">Start a commission</a>
+      <a class="btn ghost" href="#work">See the work</a>
+    </div>
+  </div>
+
+  <div class="viewer-frame">
+    <span class="bracket tl"></span><span class="bracket tr"></span>
+    <span class="bracket bl"></span><span class="bracket br"></span>
+    <div class="viewer-inner">
+      <span class="viewer-tag">GLB · Live Preview</span>
+      <span class="viewer-readout">&#9666; Drag to rotate &#9656;</span>
+      <!-- Featured model. Swap src for your own exported .glb. -->
+      <model-viewer
+        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+        alt="Rotatable 3D preview of a Blockbench model"
+        camera-controls auto-rotate auto-rotate-delay="600"
+        rotation-per-second="18deg" shadow-intensity="0.9" exposure="1.05"
+        interaction-prompt="none">
+        <div class="viewer-fallback" slot="poster">Loading 3D preview… host this page or open it in a browser to spin the model.</div>
+      </model-viewer>
+    </div>
+  </div>
+</div>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">01 / Portfolio</span>
+      <h2>Recent Work</h2>
+      <span class="rule"></span>
+    </div>
+    <p class="hint">Click any piece to open it in 3D.</p>
+    <div class="grid" id="gallery"><!-- populated from data/models.js --></div>
+  </div>
+</section>
+
+<!-- COMMISSIONS -->
+<section id="commissions">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">02 / Rates</span>
+      <h2>Commissions</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="tiers">
+      <div class="tier"><div class="t-name">Simple</div><div class="t-price">$10<small>from</small></div><div class="t-note">Items, tools, blocks</div></div>
+      <div class="tier"><div class="t-name">Detailed</div><div class="t-price">$25<small>from</small></div><div class="t-note">Weapons, armor, decor</div></div>
+      <div class="tier"><div class="t-name">Entity</div><div class="t-price">$50<small>from</small></div><div class="t-note">NPCs, mobs, pets</div></div>
+      <div class="tier"><div class="t-name">Animated Boss</div><div class="t-price">$120<small>from</small></div><div class="t-note">Rigged + animated</div></div>
+      <div class="tier"><div class="t-name">Vehicle / Rig</div><div class="t-price">$130<small>from</small></div><div class="t-note">Drivable, multi-part</div></div>
+    </div>
+    <p class="addons"><b>Add-ons:</b> plugin configs · custom animation · higher-res texturing · commercial &amp; exclusive licensing. &nbsp; 50% deposit up front · 2 revisions included · source files delivered.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">03 / Contact</span>
+      <h2>Request a Commission</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="panel">
+      <form id="commission-form" class="form">
+        <div><label for="f-name">Name / handle</label><input id="f-name" name="name" required /></div>
+        <div><label for="f-discord">Discord</label><input id="f-discord" name="discord" placeholder="username" /></div>
+        <div><label for="f-type">Project type</label>
+          <select id="f-type" name="type">
+            <option>Simple model</option>
+            <option>Detailed model</option>
+            <option>Entity / mob</option>
+            <option>Animated boss</option>
+            <option>Vehicle / rig</option>
+            <option>Mod</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div><label for="f-budget">Budget (USD)</label><input id="f-budget" name="budget" placeholder="optional" /></div>
+        <div class="full"><label for="f-msg">Details</label>
+          <textarea id="f-msg" name="message" required placeholder="What do you want built? Which plugin (ItemsAdder / Oraxen / ModelEngine)? Animated? Any deadline?"></textarea>
+        </div>
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="full actions">
+          <button class="btn" type="submit">Send request</button>
+          <a class="btn ghost" data-discord href="#" target="_blank" rel="noopener">Or DM on Discord</a>
+        </div>
+        <p id="form-msg" class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr"></span> NAME · Built in Blockbench · <span class="status"><span class="dot"></span> Comms Open</span></div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" aria-hidden="true">
+  <div class="lb-panel">
+    <div class="lb-bar">
+      <h3 id="lb-title">Model</h3>
+      <button class="lb-close" id="lb-close" aria-label="Close 3D preview">&times;</button>
+    </div>
+    <div class="lb-frame">
+      <span class="bracket tl"></span><span class="bracket tr"></span>
+      <span class="bracket bl"></span><span class="bracket br"></span>
+      <div id="lb-stage"></div>
+    </div>
+  </div>
+</div>
+
+<script src="data/models.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
