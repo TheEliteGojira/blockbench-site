@@ -1,0 +1,29 @@
+# Normalize all text files to LF in the repository.
+# Git auto-detects text vs binary; eol=lf keeps line endings consistent
+# across machines (and silences the LF/CRLF warnings on Windows).
+* text=auto eol=lf
+
+# Web source — always text
+*.html   text
+*.css    text
+*.js     text
+*.json   text
+*.svg    text
+*.md     text
+*.txt    text
+
+# Binary assets — never convert line endings or attempt text diffs
+*.glb    binary
+*.gltf   binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.ico    binary
+*.mp4    binary
+*.webm   binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.otf    binary
