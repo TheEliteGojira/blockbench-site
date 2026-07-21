@@ -49,11 +49,14 @@ assets/renders/     gallery thumbnail PNGs
 
 ## TODO (open tasks)
 - [ ] Wire the real form endpoint and test one submission end-to-end.
-- [ ] Replace NAME placeholders (nav brand, footer) and demo gallery entries.
-- [ ] SEO/social: meta description is set — add Open Graph tags, a favicon, an OG image.
+- [x] Replace NAME placeholders (nav brand, footer, `<title>`) → **KAYGEE**.
+- [ ] Replace the demo gallery entries with real portfolio pieces (`data/models.js` + `assets/`).
+- [x] SEO/social: Open Graph + Twitter meta tags, canonical URL, `theme-color`,
+      `assets/favicon.svg`, `assets/icon.png` (512), `assets/og-image.png` (1200×630).
 - [ ] Perf: defer the hero `model-viewer` until in viewport; the lightbox already
       lazy-creates its viewer per open.
 - [ ] Accessibility: the lightbox pins focus to the close button — upgrade to a
       full focus trap if more controls are added; audit `prefers-reduced-motion`.
 - [ ] Gallery filter by tag (Weapon / Animated / Vehicle / …).
-- [ ] Deploy config (Netlify or GitHub Pages) + a 404 page.
+- [x] Deploy: GitHub Pages via Actions workflow (`.github/workflows/deploy.yml`,
+      auto-enabled) + custom `404.html`. Live: https://theelitegojira.github.io/blockbench-site/
