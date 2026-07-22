@@ -5,7 +5,7 @@ const CONFIG = {
   // Contact-form POST target. Option A (recommended): a Formspree/Basin/Formsubmit
   // endpoint (spam-filtered). Option B: a Discord webhook — see CLAUDE.md for the
   // small change to the fetch body that requires.
-  formEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
+  formEndpoint: "https://formspree.io/f/xwvgqjnb",
   // Your Discord invite or profile link. Wired into every [data-discord] element.
   discordUrl:   "https://discord.com/"
 };
@@ -83,10 +83,11 @@ if (gallery && Array.isArray(window.MODELS)){
     return c;
   });
 
-  /* ---- tag filter chips (derived from the model tags) ---- */
+  /* ---- tag filter chips (derived from the model tags; shown only with 2+ tags) ---- */
   const filters = document.getElementById("filters");
-  if (filters && cards.length){
-    const tags = ["All", ...Array.from(new Set(window.MODELS.map(m => m.tag)))];
+  const uniqueTags = Array.from(new Set(window.MODELS.map(m => m.tag)));
+  if (filters && cards.length && uniqueTags.length >= 2){
+    const tags = ["All", ...uniqueTags];
     tags.forEach(tag => {
       const chip = document.createElement("button");
       chip.type = "button";
@@ -105,6 +106,8 @@ if (gallery && Array.isArray(window.MODELS)){
       });
       filters.appendChild(chip);
     });
+  } else if (filters){
+    filters.hidden = true;                   // nothing to filter with a single category
   }
 }
 
@@ -125,6 +128,7 @@ function openLightbox(index){
   mv.setAttribute("src", model.glb);
   mv.setAttribute("alt", model.name + " — 3D model");
   mv.setAttribute("tabindex", "0");          // keep it in the focus-trap tab order
+  if (model.orient) mv.setAttribute("orientation", model.orient);
   mv.setAttribute("camera-controls", "");
   if (!reduceMotion) mv.setAttribute("auto-rotate", "");
   mv.setAttribute("shadow-intensity", "0.9");
@@ -202,7 +206,7 @@ if (form){
       }
       if (!res.ok) throw new Error("Request failed");
       form.reset();
-      formMsg.textContent = "Request sent — I'll get back to you on Discord.";
+      formMsg.textContent = "Request sent — I'll get back to you soon.";
       formMsg.classList.add("ok");
     } catch (err) {
       formMsg.innerHTML = 'Could not send right now — reach me directly on ' +
