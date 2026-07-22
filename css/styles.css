@@ -4,6 +4,11 @@
   --line:#1e5f96; --accent:#33a9f2; --accent-hi:#6ec9ff;
   --ink:#bcd4e8; --ink-dim:#6f8ba3; --white:#eaf4ff; --open:#3fd07f;
   --chamf: polygon(0 14px, 14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+  /* Chamfer OUTLINE as an even-odd donut: outer chamfer, then a 1.5px-inset inner
+     chamfer. Stroking the angled edges too — a plain border can't follow the cut. */
+  --chamf-ring: polygon(evenodd,
+    0 14px, 14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%,
+    1.5px 14px, 14px 1.5px, calc(100% - 1.5px) 1.5px, calc(100% - 1.5px) calc(100% - 14px), calc(100% - 14px) calc(100% - 1.5px), 1.5px calc(100% - 1.5px));
 }
 *{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
@@ -52,18 +57,15 @@ header{ position:sticky; top:0; z-index:20; background:rgba(9,20,32,.86); backdr
 .btn.ghost{ --oc:rgba(30,95,150,.7); color:var(--ink-dim); background:transparent; }
 .btn.ghost:hover{ color:var(--white); --oc:var(--accent); background:rgba(51,169,242,.08); box-shadow:none; }
 
-/* Chamfer outline: a 1px ring that follows the clip-path, INCLUDING the angled
-   edges (a plain `border` only traces the rectangular box, so diagonals go bare).
-   Per-element colour comes from --oc; works over translucent fills, ignores text. */
+/* Chamfer outline: a ring that follows the clip-path, INCLUDING the angled edges
+   (a plain `border` only traces the rectangular box, so diagonals go bare). The
+   ::before is filled with --oc, then clipped to a donut so only the ring shows —
+   works over translucent fills and ignores the element's text. */
 .btn::before, .viewer-frame::before, .lb-frame::before, .card::before, .tag::before,
 .tier::before, .contact .panel::before, .field::before, .filter-chip::before, .lb-close::before{
-  content:""; position:absolute; inset:0; padding:1px; pointer-events:none;
+  content:""; position:absolute; inset:0; pointer-events:none;
   background:var(--oc, var(--line));
-  clip-path:var(--chamf);
-  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-          mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-          mask-composite:exclude;
+  clip-path:var(--chamf-ring);
   transition:background .2s;
 }
 

@@ -54,8 +54,9 @@ assets/renders/     gallery thumbnail PNGs
 - [x] Replace NAME placeholders (nav brand, footer, `<title>`) → **KAYGEE**.
 - [~] Real portfolio pieces: 1 done (Uwovacht — real `.glb` + rendered thumbnail,
       featured in hero). Swap the remaining demo placeholders as more models arrive.
-- [x] Chamfer outlines: 1px ring (`::before` + `mask-composite`) that follows the
-      clip-path angled edges on every button/panel/card/tier/tag/chip/frame + form field.
+- [x] Chamfer outlines: `::before` filled with `--oc`, clipped to an even-odd donut
+      (`--chamf-ring`) so the ring follows the angled edges too. On every
+      button/panel/card/tier/tag/chip/frame + form field (`.field` wrapper).
 - [x] SEO/social: Open Graph + Twitter meta tags, canonical URL, `theme-color`,
       `assets/favicon.svg`, `assets/icon.png` (512), `assets/og-image.png` (1200×630).
 - [x] Perf: hero `model-viewer` deferred until visible (IntersectionObserver +
