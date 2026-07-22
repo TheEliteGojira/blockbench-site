@@ -48,15 +48,18 @@ assets/renders/     gallery thumbnail PNGs
 3. Add an entry to `data/models.js`.
 
 ## TODO (open tasks)
-- [ ] Wire the real form endpoint and test one submission end-to-end.
+- [ ] Wire the real form endpoint + Discord URL. Code auto-detects Formspree-style
+      vs Discord-webhook endpoints (`CONFIG.formEndpoint` in `js/main.js`); just set
+      `formEndpoint` + `discordUrl` and test one submission end-to-end.
 - [x] Replace NAME placeholders (nav brand, footer, `<title>`) → **KAYGEE**.
-- [ ] Replace the demo gallery entries with real portfolio pieces (`data/models.js` + `assets/`).
+- [~] Real portfolio pieces: 1 done (Uwovacht — real `.glb` + rendered thumbnail,
+      featured in hero). Swap the remaining demo placeholders as more models arrive.
 - [x] SEO/social: Open Graph + Twitter meta tags, canonical URL, `theme-color`,
       `assets/favicon.svg`, `assets/icon.png` (512), `assets/og-image.png` (1200×630).
-- [ ] Perf: defer the hero `model-viewer` until in viewport; the lightbox already
-      lazy-creates its viewer per open.
-- [ ] Accessibility: the lightbox pins focus to the close button — upgrade to a
-      full focus trap if more controls are added; audit `prefers-reduced-motion`.
-- [ ] Gallery filter by tag (Weapon / Animated / Vehicle / …).
+- [x] Perf: hero `model-viewer` deferred until visible (IntersectionObserver +
+      visibilitychange fallback); the lightbox lazy-creates its viewer per open.
+- [x] Accessibility: full lightbox focus trap (Tab/Shift+Tab cycle, focus restored
+      on close) + `prefers-reduced-motion` disables 3D auto-rotate.
+- [x] Gallery filter by tag — chips derived from model tags (`#filters`).
 - [x] Deploy: GitHub Pages via Actions workflow (`.github/workflows/deploy.yml`,
       auto-enabled) + custom `404.html`. Live: https://theelitegojira.github.io/blockbench-site/
