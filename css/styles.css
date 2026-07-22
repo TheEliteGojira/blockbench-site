@@ -72,6 +72,12 @@ section{ padding:64px 0; }
 .sec-head h2{ font-family:'Bebas Neue',sans-serif; color:var(--white); font-size:clamp(2rem,4vw,2.8rem); letter-spacing:.03em; }
 .rule{ flex:1; height:1px; background:linear-gradient(90deg,var(--line),transparent); }
 
+/* gallery filter chips */
+.filters{ display:flex; flex-wrap:wrap; gap:10px; margin:0 0 22px; }
+.filter-chip{ font-family:'Orbitron',sans-serif; font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:.62rem; color:var(--ink-dim); background:transparent; border:1px solid rgba(30,95,150,.5); padding:8px 14px; cursor:pointer; clip-path:var(--chamf); transition:.18s; }
+.filter-chip:hover, .filter-chip:focus-visible{ color:var(--white); border-color:var(--accent); outline:none; }
+.filter-chip.active{ color:#04121f; background:var(--accent); border-color:var(--accent); }
+
 /* gallery */
 .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .card{ clip-path:var(--chamf); border:1px solid rgba(30,95,150,.5); background:var(--panel); overflow:hidden; transition:.22s; cursor:pointer; text-align:left; width:100%; font:inherit; color:inherit; padding:0; display:block; }

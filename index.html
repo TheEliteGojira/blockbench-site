@@ -72,12 +72,12 @@
       <span class="viewer-readout">&#9666; Drag to rotate &#9656;</span>
       <!-- Featured model. Swap src for your own exported .glb. -->
       <model-viewer
-        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-        alt="Rotatable 3D preview of a Blockbench model"
+        data-src="assets/models/uwovacht.glb"
+        alt="Rotatable 3D preview of a featured Blockbench model"
         camera-controls auto-rotate auto-rotate-delay="600"
         rotation-per-second="18deg" shadow-intensity="0.9" exposure="1.05"
         interaction-prompt="none">
-        <div class="viewer-fallback" slot="poster">Loading 3D preview… host this page or open it in a browser to spin the model.</div>
+        <div class="viewer-fallback" slot="poster">Loading 3D preview…</div>
       </model-viewer>
     </div>
   </div>
@@ -92,6 +92,7 @@
       <span class="rule"></span>
     </div>
     <p class="hint">Click any piece to open it in 3D.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter models by type"><!-- populated from data/models.js --></div>
     <div class="grid" id="gallery"><!-- populated from data/models.js --></div>
   </div>
 </section>

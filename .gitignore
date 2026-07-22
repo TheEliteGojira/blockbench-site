@@ -1,3 +1,9 @@
+# Claude Code local tooling / preview config
+.claude/
+
+# Temporary render/capture scratch pages
+_render.html
+
 # OS / filesystem cruft
 .DS_Store
 Thumbs.db
