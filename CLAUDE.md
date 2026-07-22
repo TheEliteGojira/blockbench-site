@@ -48,12 +48,14 @@ assets/renders/     gallery thumbnail PNGs
 3. Add an entry to `data/models.js`.
 
 ## TODO (open tasks)
-- [ ] Wire the real form endpoint + Discord URL. Code auto-detects Formspree-style
-      vs Discord-webhook endpoints (`CONFIG.formEndpoint` in `js/main.js`); just set
-      `formEndpoint` + `discordUrl` and test one submission end-to-end.
+- [x] Wire the real form endpoint + Discord URL — Formspree (`f/xwvgqjnb`) set and
+      tested end-to-end; `discordUrl` points at the DM link. Code still auto-detects
+      Formspree-style vs Discord-webhook endpoints (`CONFIG` in `js/main.js`).
 - [x] Replace NAME placeholders (nav brand, footer, `<title>`) → **KAYGEE**.
 - [~] Real portfolio pieces: 1 done (Uwovacht — real `.glb` + rendered thumbnail,
       featured in hero). Swap the remaining demo placeholders as more models arrive.
+- [x] Chamfer outlines: 1px ring (`::before` + `mask-composite`) that follows the
+      clip-path angled edges on every button/panel/card/tier/tag/chip/frame + form field.
 - [x] SEO/social: Open Graph + Twitter meta tags, canonical URL, `theme-color`,
       `assets/favicon.svg`, `assets/icon.png` (512), `assets/og-image.png` (1200×630).
 - [x] Perf: hero `model-viewer` deferred until visible (IntersectionObserver +

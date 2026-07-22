@@ -7,7 +7,7 @@ const CONFIG = {
   // small change to the fetch body that requires.
   formEndpoint: "https://formspree.io/f/xwvgqjnb",
   // Your Discord invite or profile link. Wired into every [data-discord] element.
-  discordUrl:   "https://discord.com/"
+  discordUrl:   "https://discord.com/users/726531868995878957"
 };
 
 /* ---- respect reduced-motion (disables 3D auto-rotate) ---- */

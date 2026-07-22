@@ -127,10 +127,10 @@
     </div>
     <div class="panel">
       <form id="commission-form" class="form">
-        <div><label for="f-name">Name / handle</label><input id="f-name" name="name" required /></div>
-        <div><label for="f-discord">Discord</label><input id="f-discord" name="discord" placeholder="username" /></div>
+        <div><label for="f-name">Name / handle</label><span class="field"><input id="f-name" name="name" required /></span></div>
+        <div><label for="f-discord">Discord</label><span class="field"><input id="f-discord" name="discord" placeholder="username" /></span></div>
         <div><label for="f-type">Project type</label>
-          <select id="f-type" name="type">
+          <span class="field"><select id="f-type" name="type">
             <option>Simple model</option>
             <option>Detailed model</option>
             <option>Entity / mob</option>
@@ -138,11 +138,11 @@
             <option>Vehicle / rig</option>
             <option>Mod</option>
             <option>Other</option>
-          </select>
+          </select></span>
         </div>
-        <div><label for="f-budget">Budget (USD)</label><input id="f-budget" name="budget" placeholder="optional" /></div>
+        <div><label for="f-budget">Budget (USD)</label><span class="field"><input id="f-budget" name="budget" placeholder="optional" /></span></div>
         <div class="full"><label for="f-msg">Details</label>
-          <textarea id="f-msg" name="message" required placeholder="What do you want built? Which plugin (ItemsAdder / Oraxen / ModelEngine)? Animated? Any deadline?"></textarea>
+          <span class="field"><textarea id="f-msg" name="message" required placeholder="What do you want built? Which plugin (ItemsAdder / Oraxen / ModelEngine)? Animated? Any deadline?"></textarea></span>
         </div>
         <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="full actions">
